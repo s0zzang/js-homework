@@ -51,19 +51,19 @@ const chkReg = (input) => {
   }
 };
 
-const chkUser = () => {
-  let isUser = false;
+const isUser = () => {
+  let chkUser = false;
 
-  userEmail.value === user.id ? (isUser = true) : (isUser = false);
-  userPassword.value === user.pw ? (isUser = true) : (isUser = false);
+  userEmail.value === user.id ? (chkUser = true) : (chkUser = false);
+  userPassword.value === user.pw ? (chkUser = true) : (chkUser = false);
 
-  return isUser;
+  return chkUser;
 };
 
 const showResult = (e) => {
   e.preventDefault();
-  let message = chkUser()
-    ? `${user.name}님 환영합니다.`
+  let message = isUser()
+    ? `${user.name}님, 환영합니다.`
     : `아이디 또는 비밀번호를 다시 확인해주세요.`;
   alert(message);
 };
