@@ -62,10 +62,13 @@ const isUser = () => {
 
 const showResult = (e) => {
   e.preventDefault();
-  let message = isUser()
-    ? `${user.name}님, 환영합니다.`
-    : `아이디 또는 비밀번호를 다시 확인해주세요.`;
-  alert(message);
+
+  if(isUser()){
+    location.replace('/mission01/welcome.html')
+  } else {
+    alert('아이디 또는 비밀번호를 다시 확인해주세요.')
+    return    
+  }
 };
 
 userEmail.addEventListener("input", chkReg);
