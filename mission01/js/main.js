@@ -64,7 +64,7 @@ const showResult = (e) => {
   e.preventDefault();
 
   if(isUser()){
-    location.replace('../welcome.html')
+    location.replace('welcome.html')
   } else {
     alert('아이디 또는 비밀번호를 다시 확인해주세요.')
     return    
