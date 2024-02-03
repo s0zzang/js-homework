@@ -36,18 +36,18 @@ function pwReg(text) {
 }
 
 const chkReg = (input) => {
-  const target = input.target;
+  const _this = input.target;
   let isEmail = true;
-  target.type === "email" ? (isEmail = true) : (isEmail = false);
+  _this.type === "email" ? (isEmail = true) : (isEmail = false);
 
   if (isEmail) {
-    emailReg(target.value)
-      ? target.classList.remove("is--invalid")
-      : target.classList.add("is--invalid");
+    emailReg(_this.value)
+      ? _this.classList.remove("is--invalid")
+      : _this.classList.add("is--invalid");
   } else {
-    pwReg(target.value)
-      ? target.classList.remove("is--invalid")
-      : target.classList.add("is--invalid");
+    pwReg(_this.value)
+      ? _this.classList.remove("is--invalid")
+      : _this.classList.add("is--invalid");
   }
 };
 
@@ -71,16 +71,3 @@ const showResult = (e) => {
 userEmail.addEventListener("input", chkReg);
 userPassword.addEventListener("input", chkReg);
 btnLogin.addEventListener("click", showResult);
-
-// const chkEmail = (input) => {
-//   const target = input.target;
-//   const value = target.value;
-
-// if (emailReg(value)) {
-//   target.classList.remove("is--invalid");
-//   return value;
-// } else {
-//   target.classList.add("is--invalid");
-//   return false;
-// }
-// };
