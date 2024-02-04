@@ -1,7 +1,6 @@
 const user = {
   id: "asd@naver.com",
   pw: "spdlqj123!@",
-  name: "심선범",
 };
 const userEmail = document.querySelector("#userEmail");
 const userPassword = document.querySelector("#userPassword");
@@ -19,7 +18,7 @@ const btnLogin = document.querySelector(".btn-login");
   -> 정규식에 합당하면, 에러메시지 노출 안함 (input)
 
 - 로그인 버튼 눌렀을 때 
-  -> 아이디/비번 user와 일치하면, 로그인 성공(얼럿? 모달?)
+  -> 아이디/비번 user와 일치하면, 로그인 성공(페이지 변경)
   -> 아이디/비번 user와 일치하지 않으면, 반응 없음
 
 */
@@ -52,12 +51,9 @@ const chkReg = (input) => {
 };
 
 const isUser = () => {
-  let chkUser = false;
-
-  userEmail.value === user.id ? (chkUser = true) : (chkUser = false);
-  userPassword.value === user.pw ? (chkUser = true) : (chkUser = false);
-
-  return chkUser;
+  let chkId = userEmail.value === user.id ? true : false;
+  let chkPw = userPassword.value === user.pw ? true : false;
+  return chkId && chkPw;
 };
 
 const showResult = (e) => {
