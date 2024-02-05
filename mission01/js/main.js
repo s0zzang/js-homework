@@ -36,8 +36,7 @@ function pwReg(text) {
 
 const chkReg = (input) => {
   const _this = input.target;
-  let isEmail = true;
-  _this.type === "email" ? (isEmail = true) : (isEmail = false);
+  let isEmail = _this.type === "email" ? true : false;
 
   if (isEmail) {
     emailReg(_this.value)
@@ -59,11 +58,11 @@ const isUser = () => {
 const showResult = (e) => {
   e.preventDefault();
 
-  if(isUser()){
-    location.replace('welcome.html')
+  if (isUser()) {
+    location.replace("welcome.html");
   } else {
-    alert('아이디 또는 비밀번호를 다시 확인해주세요.')
-    return    
+    alert("아이디 또는 비밀번호를 다시 확인해주세요.");
+    return;
   }
 };
 
