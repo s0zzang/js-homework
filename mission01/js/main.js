@@ -2,9 +2,11 @@ const user = {
   id: "asd@naver.com",
   pw: "spdlqj123!@",
 };
-const userEmail = document.querySelector("#userEmail");
-const userPassword = document.querySelector("#userPassword");
-const btnLogin = document.querySelector(".btn-login");
+
+/* 요소 노드를 의미하는 $ 표시 추가 */
+const $userEmail = document.querySelector("#userEmail");
+const $userPassword = document.querySelector("#userPassword");
+const $btnLogin = document.querySelector(".btn-login");
 
 /*
 
@@ -50,8 +52,8 @@ const chkReg = (input) => {
 };
 
 const isUser = () => {
-  let chkId = userEmail.value === user.id ? true : false;
-  let chkPw = userPassword.value === user.pw ? true : false;
+  let chkId = $userEmail.value === user.id ? true : false;
+  let chkPw = $userPassword.value === user.pw ? true : false;
   return chkId && chkPw;
 };
 
@@ -62,10 +64,9 @@ const showResult = (e) => {
     location.replace("welcome.html");
   } else {
     alert("아이디 또는 비밀번호를 다시 확인해주세요.");
-    return;
   }
 };
 
-userEmail.addEventListener("input", chkReg);
-userPassword.addEventListener("input", chkReg);
-btnLogin.addEventListener("click", showResult);
+$userEmail.addEventListener("input", chkReg);
+$userPassword.addEventListener("input", chkReg);
+$btnLogin.addEventListener("click", showResult);
