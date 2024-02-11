@@ -1,5 +1,3 @@
-// import { data } from "../lib/data/data.js";
-// import { setBgColor, setImage, setNameText } from "../lib/dom/index.js";
 import { data, setBgColor, setImage, setNameText } from "../lib/index.js";
 
 /* 
