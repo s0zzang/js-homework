@@ -51,9 +51,35 @@
 // 함수 호출
 setBgColor(nodeData.color);
 
-// 함수 정의
+// 함수 선언
 function setBgColor([colorA, colorB = "#000"]) { ... }
 ```
 
 - 현재 클릭된 node와 연관된 nodeData에서 필요한 정보인 `color` 배열만 받아옴
 - 두번째 컬러의 기본값을 `#000`으로 설정하여 빈 값이 넘어오는 경우 방지
+
+#### 📌 `setImage` 함수
+
+```js
+// 함수 호출
+setImage(node, nodeData, $visualImg);
+
+// 함수 선언
+function setImage(node, { alt = "엘리멘탈 포스터" }, $visualImg) { ... }
+```
+
+- 현재 클릭된 node와 연관된 nodeData에서 필요한 정보인 `alt` 값만 받아옴
+- 기본값을 설정하여 빈 값이 넘어오는 경우 방지
+
+#### 📌 `setNameText` 함수
+
+```js
+// 함수 호출
+setNameText(nodeData, $nickName);
+
+// 함수 선언
+function setNameText({ name = "짜장" }, $nickName) { ... }
+```
+
+- 현재 클릭된 node와 연관된 nodeData에서 필요한 정보인 `name` 값만 받아옴
+- 기본값을 설정하여 빈 값이 넘어오는 경우 방지
