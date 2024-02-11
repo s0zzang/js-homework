@@ -1,4 +1,4 @@
-export const data = [
+const data = [
   {
     color: ["#ff6a00", "#720400"],
     name: "EMBER",
@@ -20,3 +20,5 @@ export const data = [
     // alt: "게일 포스터",
   },
 ];
+
+export default data;

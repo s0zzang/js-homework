@@ -1,5 +1,6 @@
-import { data } from "./data.js";
-import { setBgColor, setImage, setNameText } from "./lib/index.js";
+// import { data } from "../lib/data/data.js";
+// import { setBgColor, setImage, setNameText } from "../lib/dom/index.js";
+import { data, setBgColor, setImage, setNameText } from "../lib/index.js";
 
 /* 
 
@@ -26,10 +27,8 @@ function handleNavClick(e) {
   if (e.target.tagName !== "LI") node = node.closest("li");
   if (!node) return;
 
-  const nodeSiblings = node.parentElement.children;
-  for (const sibling of nodeSiblings) {
-    sibling.classList.remove("is-active");
-  }
+  const siblings = node.parentElement.children;
+  for (const sibling of siblings) sibling.classList.remove("is-active");
   node.classList.add("is-active");
 
   const nodeData = data[node.dataset.index - 1];
