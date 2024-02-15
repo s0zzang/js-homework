@@ -1,4 +1,11 @@
-import { data, setBgColor, setImage, setNameText } from "../lib/index.js";
+import AudioPlayer from "../lib/dom/audio.js";
+import {
+  data,
+  setAudio,
+  setBgColor,
+  setImage,
+  setNameText,
+} from "../lib/index.js";
 
 /* 
 
@@ -19,6 +26,12 @@ import { data, setBgColor, setImage, setNameText } from "../lib/index.js";
 const $nav = document.querySelector(".nav");
 const $visualImg = document.querySelector(".visual img");
 const $nickName = document.querySelector(".nickName");
+const audioList = [
+  new AudioPlayer(`./assets/audio/ember.m4a`),
+  new AudioPlayer(`./assets/audio/wade.m4a`),
+  new AudioPlayer(`./assets/audio/clod.m4a`),
+  new AudioPlayer(`./assets/audio/gale.m4a`),
+];
 
 function handleNavClick(e) {
   let target = e.target.closest("li");
@@ -28,10 +41,12 @@ function handleNavClick(e) {
   for (const sibling of siblings) sibling.classList.remove("is-active");
   target.classList.add("is-active");
 
-  const targetData = data[target.dataset.index - 1];
+  const idx = target.dataset.index - 1;
+  const targetData = data[idx];
   setBgColor(targetData.color, document.body);
   setImage(targetData, target, $visualImg);
   setNameText(targetData.name, $nickName);
+  setAudio(audioList, idx);
 }
 
 $nav.addEventListener("click", handleNavClick);

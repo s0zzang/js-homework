@@ -11,7 +11,7 @@ const data = [
   },
   {
     color: ["#98d00f", "#002906"],
-    // name: "CLOD",
+    name: "CLOD",
     alt: "클로드 포스터",
   },
   {
