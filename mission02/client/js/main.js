@@ -21,18 +21,17 @@ const $visualImg = document.querySelector(".visual img");
 const $nickName = document.querySelector(".nickName");
 
 function handleNavClick(e) {
-  let node = e.target;
-  if (e.target.tagName !== "LI") node = node.closest("li");
-  if (!node) return;
+  let target = e.target.closest("li");
+  if (!target) return;
 
-  const siblings = node.parentElement.children;
+  const siblings = target.parentElement.children;
   for (const sibling of siblings) sibling.classList.remove("is-active");
-  node.classList.add("is-active");
+  target.classList.add("is-active");
 
-  const nodeData = data[node.dataset.index - 1];
-  setBgColor(nodeData.color);
-  setImage(node, nodeData, $visualImg);
-  setNameText(nodeData, $nickName);
+  const targetData = data[target.dataset.index - 1];
+  setBgColor(targetData.color, document.body);
+  setImage(targetData, target, $visualImg);
+  setNameText(targetData.name, $nickName);
 }
 
 $nav.addEventListener("click", handleNavClick);
