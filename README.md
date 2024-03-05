@@ -1,4 +1,4 @@
-# [멋쟁이사자처럼] JavaScript 과제
+# [멋쟁이사자처럼] JavaScript & React 과제
 
 <br>
 

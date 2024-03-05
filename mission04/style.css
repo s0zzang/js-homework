@@ -1,0 +1,50 @@
+@font-face {
+  font-family: 'omyu_pretty';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  font-family: 'omyu_pretty';
+  --main-color: #925dc8;
+}
+
+.input {
+  display: flex;
+  gap: 8px;
+  height: 30px;
+}
+
+input {
+  font: inherit;
+  text-indent: 5px;
+  border-radius: .3em;
+  border: 1px solid #666;
+}
+
+input:focus-visible {
+  outline-color: var(--main-color);
+}
+
+button {
+  background: #000;
+  border: none;
+  color: #fff;
+  border-radius: .3em;
+  padding: 0 .6em;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all .3s;
+  font: inherit;
+}
+
+button:hover {
+  background: var(--main-color);
+  color: #fff;
+}
+
+button:disabled {
+  opacity: .4;
+  pointer-events: none;
+}

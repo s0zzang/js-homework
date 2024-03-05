@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>구구단</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      function Title() {
+        return (
+          <div className="title">
+            <h1>구구단 ver.React</h1>
+          </div>
+        );
+      }
+
+      function Input({ num, changeNum }) {
+        const [value, setValue] = React.useState("");
+        const [isDisabled, setIsDisabled] = React.useState("disabled");
+        const changeIsDisbled = (isDisabled) => setIsDisabled(isDisabled);
+        const handleInput = (value) => {
+          setValue(value);
+          changeIsDisbled(false);
+        };
+        const handleClick = () => {
+          if (value.trim()) {
+            changeNum(value);
+            setValue("");
+            changeIsDisbled(true);
+          }
+        };
+        const handleKeyUp = (e) => {
+          if (e.key === "Enter") handleClick(value);
+        };
+        return (
+          <div className="input">
+            <input
+              type="number"
+              value={value}
+              onChange={(e) => handleInput(e.target.value)}
+              onKeyUp={(e) => handleKeyUp(e)}
+              placeholder="숫자를 입력해주세요"
+              autoFocus
+            />
+            <button onClick={handleClick} disabled={isDisabled}>
+              구구단 가보자고
+            </button>
+          </div>
+        );
+      }
+
+      function Item({ num, i }) {
+        return (
+          <li>
+            {num} * {i + 1} = {+num * (i + 1)}
+          </li>
+        );
+      }
+
+      function Result({ num }) {
+        const li = [..."-".repeat(9)].map((_, i) => (
+          <Item key={i} num={num} i={i}></Item>
+        ));
+        return (
+          <>
+            {!num ? (
+              <p>구구단이 무엇인지 보여드리죠.</p>
+            ) : (
+              <>
+                <p>
+                  <strong>{num}</strong>단입니다만?
+                </p>
+                <ul>{li}</ul>
+              </>
+            )}
+          </>
+        );
+      }
+
+      function App() {
+        const [num, setNum] = React.useState(0);
+        const changeNum = (newNum) => setNum(newNum);
+        return (
+          <>
+            <Title />
+            <Input num={num} changeNum={changeNum} />
+            <Result num={num} />
+          </>
+        );
+      }
+      ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+    </script>
+  </body>
+</html>
