@@ -1,22 +1,26 @@
 import { Link } from "react-router-dom";
-import Title from "../components/Title";
+import { BtnWr, InputWr, Title, Todo } from "../components/Style";
 
 const TodoAdd = () => {
   return (
     <div id="main">
       <Title>할일 추가</Title>
-      <div className="todo">
+      <Todo className="todo">
         <form>
-          <label htmlFor="title">제목 :</label>
-          <input type="text" id="title" autoFocus />
-          <br />
-          <label htmlFor="content">내용 :</label>
-          <input type="text" id="content" />
-          <br />
-          <Link to="/detail">추가</Link>
-          <Link to="/list">취소</Link>
+          <InputWr>
+            <label htmlFor="title">제목 </label>
+            <input type="text" id="title" autoFocus />
+          </InputWr>
+          <InputWr>
+            <label htmlFor="content">내용 </label>
+            <input type="text" id="content" />
+          </InputWr>
         </form>
-      </div>
+      </Todo>
+      <BtnWr>
+        <Link to="/detail">추가</Link>
+        <Link to="/list">취소</Link>
+      </BtnWr>
     </div>
   );
 };

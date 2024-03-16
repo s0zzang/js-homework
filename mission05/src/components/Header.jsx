@@ -8,16 +8,16 @@ const HeaderStyled = styled.header`
   position: fixed;
   inset: 30px;
   bottom: auto;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 
   h1 {
     font-size: 40px;
   }
-
   nav ul {
     display: flex;
     justify-content: center;
-    gap: 1em;
-    font-size: 18px;
+    gap: 0.8em;
   }
 `;
 

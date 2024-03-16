@@ -4,18 +4,18 @@ import TodoListItem from "./TodoListItem";
 import { ReactCsspin } from "react-csspin";
 import "react-csspin/dist/style.css";
 import styled from "styled-components";
-import Title from "../components/Title";
+import { Title } from "../components/Style";
 
 const TitleStyled = styled.div`
   display: flex;
   align-items: center;
-  gap: 0.5em;
+  gap: 0.6em;
 
   a {
     font-size: 16px;
     background: #fff;
-    padding: 0.4em 0.6em;
-    border: 1px solid #ccc;
+    padding: 0.2em 0.4em;
+    border: 1px solid;
     border-radius: 0.3em;
   }
 `;

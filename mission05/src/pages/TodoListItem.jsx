@@ -15,12 +15,14 @@ const LiStyled = styled.li`
   }
   a {
     color: #333;
+    padding-right: 0.6em;
   }
   .btn-delete {
     font-size: 13px;
     color: #333;
     background: #f2f2f2;
     padding: 0.2em 0.4em;
+    margin-left: auto;
     border-radius: 0.3em;
   }
 `;

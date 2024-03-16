@@ -8,6 +8,8 @@
 :root {
   background: #edede2;
   font-family: 'NanumSquareNeo-Variable';
+  line-height: 1.4;
+  word-break: keep-all;
   --main-color: #0079b2;
 }
 
@@ -36,7 +38,7 @@ input,
 button {
   font-size: 16px;
   height: inherit;
-  border-radius: 0.5em;
+  border-radius: 0.4em;
   height: 2.4em;
   border: 1px solid #ccc;
 }
