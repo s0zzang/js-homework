@@ -14,4 +14,5 @@ export default defineConfig({
   build: {
     outDir: "docs",
   },
+  homepage: "https://s0zzang.github.io/likelion-homework/mission05",
 });
