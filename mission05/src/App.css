@@ -1,0 +1,68 @@
+@font-face {
+  font-family: 'GangwonEdu_OTFBoldA';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  font-family: 'GangwonEdu_OTFBoldA';
+  --main-color: #0079b2;
+}
+
+* {
+  padding: unset;
+  margin: unset;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+.todoapp {
+  padding: 30px;
+  padding-top: 90px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  inset: 30px;
+  bottom: auto;
+}
+
+header h1 {
+  font-size: 40px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  font-size: 24px;
+}
+
+.search {
+  margin: 10px 0 20px;
+}
+
+.todolist {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1em;
+  font-size: 18px;
+}
+
+.todolist li {}
+
+/* https://www.pinterest.co.kr/pin/609604499591324106/ */
