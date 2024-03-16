@@ -1,12 +1,13 @@
 @font-face {
-  font-family: 'GangwonEdu_OTFBoldA';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+  font-family: 'NanumSquareNeo-Variable';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
 :root {
-  font-family: 'GangwonEdu_OTFBoldA';
+  background: #edede2;
+  font-family: 'NanumSquareNeo-Variable';
   --main-color: #0079b2;
 }
 
@@ -23,46 +24,31 @@ a:visited {
   color: inherit;
 }
 
+a:-webkit-any-link {
+  color: var(--main-color);
+}
+
 li {
   list-style: none;
 }
 
-.todoapp {
-  padding: 30px;
-  padding-top: 90px;
+input,
+button {
+  font-size: 16px;
+  height: inherit;
+  border-radius: 0.5em;
+  height: 2.4em;
+  border: 1px solid #ccc;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  inset: 30px;
-  bottom: auto;
+input {
+  text-indent: 0.5em;
 }
 
-header h1 {
-  font-size: 40px;
+input:focus-visible {
+  outline-color: var(--main-color);
 }
 
-nav ul {
-  display: flex;
-  justify-content: center;
-  gap: 1em;
-  font-size: 24px;
+button {
+  cursor: pointer;
 }
-
-.search {
-  margin: 10px 0 20px;
-}
-
-.todolist {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1em;
-  font-size: 18px;
-}
-
-.todolist li {}
-
-/* https://www.pinterest.co.kr/pin/609604499591324106/ */

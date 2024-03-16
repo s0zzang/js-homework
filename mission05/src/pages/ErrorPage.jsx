@@ -1,8 +1,10 @@
+import Title from "../components/Title";
+
 const ErrorPage = () => {
   return (
     <div id="main">
       <div className="todo">
-        <h2>에러 발생</h2>
+        <Title>에러 발생</Title>
         <p>잠시후 다시 이용해 주세요.</p>
       </div>
     </div>

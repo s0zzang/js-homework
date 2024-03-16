@@ -1,8 +1,15 @@
+import styled from "styled-components";
+
+const FooterStyled = styled.footer`
+  margin-top: 3em;
+  color: #999;
+`;
+
 const Footer = () => {
   return (
-    <footer>
+    <FooterStyled>
       <p>Front-End School 9기</p>
-    </footer>
+    </FooterStyled>
   );
 };
 

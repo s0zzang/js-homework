@@ -1,8 +1,18 @@
 import { Link, useParams } from "react-router-dom";
 import useAxios from "@hooks/useAxios";
+import Title from "../components/Title";
+import styled from "styled-components";
 
-// 과제 : 상세 조회, 목록 스피너 추가, 에러 메시지 있다면 보여주기 추가
-// 시간 남으면 css까지 입히기
+const UlStyled = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+`;
+const BtnWrapStyled = styled.div`
+  display: flex;
+  gap: 0.4em;
+  margin-top: 1em;
+`;
 
 const TodoDetail = () => {
   // params._id : rount.jsx에서 :콜론 뒤에 붙인 글자
@@ -14,16 +24,18 @@ const TodoDetail = () => {
 
   return (
     <div id="main">
-      <h2>할일 상세 보기</h2>
-      <div className="todo">
-        <div>제목 : {data?.item.title}</div>
-        <div>내용 : {data?.item.content}</div>
-        <div>상태 : {data?.item.done ? "완료" : "미완료"}</div>
-        <div>작성일 : {data?.item.createdAt}</div>
-        <div>수정일 : {data?.item.updatedAt}</div>
+      <Title>할일 상세 보기</Title>
+      <UlStyled className="todo">
+        <li>제목 : {data?.item.title}</li>
+        <li>내용 : {data?.item.content}</li>
+        <li>상태 : {data?.item.done ? "완료" : "미완료"}</li>
+        <li>작성일 : {data?.item.createdAt}</li>
+        <li>수정일 : {data?.item.updatedAt}</li>
+      </UlStyled>
+      <BtnWrapStyled>
         <Link to="/edit">수정</Link>
         <Link to="/list">목록</Link>
-      </div>
+      </BtnWrapStyled>
     </div>
   );
 };

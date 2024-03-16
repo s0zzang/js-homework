@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
+import Title from "../components/Title";
 
 const TodoEdit = () => {
   return (
     <div id="main">
-      <h2>할일 수정</h2>
+      <Title>할일 수정</Title>
       <div className="todo">
         <form>
           <label htmlFor="title">제목 :</label>
