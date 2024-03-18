@@ -27,16 +27,20 @@ const LiStyled = styled.li`
   }
 `;
 
-const TodoListItem = ({ item }) => {
+const TodoListItem = ({ item, handleDelete }) => {
   return (
     <LiStyled key={item._id}>
       <span>{item._id}</span>
       <Link to={`/list/${item._id}`}>
         {item.done ? <s>{item.title}</s> : item.title}{" "}
       </Link>
-      <Link to="/list" className="btn-delete">
+      <button
+        type="button"
+        className="btn-delete"
+        onClick={() => handleDelete(item._id)}
+      >
         삭제
-      </Link>
+      </button>
     </LiStyled>
   );
 };
@@ -47,6 +51,7 @@ TodoListItem.propTypes = {
     title: PropTypes.string,
     done: PropTypes.bool,
   }),
+  handleDelete: PropTypes.func,
 };
 
 export default TodoListItem;

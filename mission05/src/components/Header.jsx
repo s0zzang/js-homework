@@ -5,6 +5,8 @@ const HeaderStyled = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4em;
   position: fixed;
   inset: 30px;
   bottom: auto;
@@ -12,12 +14,13 @@ const HeaderStyled = styled.header`
   letter-spacing: 0.1em;
 
   h1 {
-    font-size: 40px;
+    font-size: clamp(30px, 4vw, 40px);
   }
   nav ul {
     display: flex;
     justify-content: center;
     gap: 0.8em;
+    font-size: clamp(14px, 3vw, 16px);
   }
 `;
 

@@ -20,8 +20,10 @@ const BtnWrStyled = styled.div`
   margin-top: 1em;
   margin-left: auto;
 
-  a {
-    background: #f2f2f2;
+  a,
+  button {
+    color: var(--main-color);
+    background: #fff;
     border: 1px solid;
     padding: 0.4em 0.6em;
     border-radius: 0.4em;

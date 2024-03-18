@@ -1,10 +1,11 @@
+import useAxiosInstance from "@hooks/useAxiosInstance";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import useAxios from "@hooks/useAxios";
+import styled from "styled-components";
+import { Title } from "../components/Style";
 import TodoListItem from "./TodoListItem";
 import { ReactCsspin } from "react-csspin";
 import "react-csspin/dist/style.css";
-import styled from "styled-components";
-import { Title } from "../components/Style";
 
 const TitleStyled = styled.div`
   display: flex;
@@ -39,9 +40,33 @@ const UlStyled = styled.ul`
 `;
 
 const TodoList = () => {
-  const { isLoading, data, error } = useAxios({ url: "/todolist?delay=1000" });
+  const axios = useAxiosInstance(); // 최상단 조건 피하려고 만든거다
+  const [data, setData] = useState();
+  const fetchList = async () => {
+    const response = await axios.get(`todolist`);
+    setData(response.data);
+  };
+
+  // 마운트 되면 최초 한번 목록 조회
+  useEffect(() => {
+    fetchList();
+  }, []);
+  // const { isLoading, data, error } = useAxios({ url: "/todolist" });
+
+  const handleDelete = async (_id) => {
+    try {
+      await axios.delete(`/todolist/${_id}`);
+      alert("할일이 삭제된?");
+      // api에서 목록 조회
+      fetchList();
+    } catch (err) {
+      console.error(err);
+      alert("할일 삭제에 실패한..");
+    }
+  };
+
   const itemList = data?.items.map((item) => (
-    <TodoListItem key={item._id} item={item} />
+    <TodoListItem key={item._id} item={item} handleDelete={handleDelete} />
   ));
 
   return (
@@ -55,8 +80,8 @@ const TodoList = () => {
           <input type="text" autoFocus />
           <button type="button">검색</button>
         </SearchStyled>
-        {isLoading && <ReactCsspin color="black" />}
-        {error && <p style={{ color: "#d92020" }}>{error.message}</p>}
+        {/* {isLoading && <ReactCsspin color="black" />}
+        {error && <p style={{ color: "#d92020" }}>{error.message}</p>} */}
         <UlStyled className="todolist">{itemList}</UlStyled>
       </div>
     </div>
