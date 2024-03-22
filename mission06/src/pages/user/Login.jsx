@@ -1,7 +1,7 @@
 import useCustomAxios from "@hooks/useCustomAxios.mjs";
 import { memberState } from "@recoil/user/atoms.mjs";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSetRecoilState } from "recoil";
 
 function Login() {
@@ -65,6 +65,7 @@ function Login() {
         />
         {<div style={{ color: "red" }}>{errors?.password?.message}</div>}
         <button type="submit">로그인</button>
+        <Link to="/user/register">회원가입</Link>
       </form>
     </>
   );
