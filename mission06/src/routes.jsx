@@ -5,7 +5,7 @@ import BoardNew from "@pages/board/BoardNew";
 import BoardResult from "@pages/board/BoardResult";
 import ReplyList from "@pages/board/ReplyList";
 import Login from "@pages/user/Login";
-import Register from "@pages/user/Register";
+import Signup from "@pages/user/Signup";
 import { createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
       { path: "/boards/new", element: <BoardNew /> },
       { path: "/boards/:_id/result", element: <BoardResult /> },
       { path: "/user/login", element: <Login /> },
-      { path: "/user/register", element: <Register /> },
+      { path: "/user/signup", element: <Signup /> },
     ],
   },
 ]);

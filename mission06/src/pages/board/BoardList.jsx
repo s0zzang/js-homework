@@ -8,8 +8,8 @@ const BoardList = () => {
   const axios = useCustomAxios();
 
   const fetchBoardList = async () => {
-    const reponse = await axios.get("/posts");
-    setData(reponse.data);
+    const res = await axios.get("/posts");
+    setData(res.data);
   };
 
   // useEffect를 비동기 함수로 만들지 말기 : 복잡해졌을 때 순서 알기 어려움

@@ -65,7 +65,7 @@ function Login() {
         />
         {<div style={{ color: "red" }}>{errors?.password?.message}</div>}
         <button type="submit">로그인</button>
-        <Link to="/user/register">회원가입</Link>
+        <Link to="/user/signup">회원가입</Link>
       </form>
     </>
   );

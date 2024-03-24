@@ -1,8 +1,8 @@
 import useCustomAxios from "@hooks/useCustomAxios.mjs";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-function Register() {
+function Signup() {
   const axios = useCustomAxios();
   const navigate = useNavigate();
   const errorStyle = { color: "red" };
@@ -80,7 +80,7 @@ function Register() {
               required: "회원 유형을 선택해주세요.",
             })}
           />
-          관리자
+          판매자
         </label>
         {<div style={errorStyle}>{errors?.type?.message}</div>}
         <label htmlFor="phone">휴대폰 번호</label>
@@ -103,10 +103,12 @@ function Register() {
           })}
         />
         {<div style={errorStyle}>{errors?.address?.message}</div>}
+        <br />
+        <Link to="/user/login">취소</Link>
         <button>가입</button>
       </form>
     </>
   );
 }
 
-export default Register;
+export default Signup;
