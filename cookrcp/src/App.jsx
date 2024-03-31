@@ -9,8 +9,7 @@ function App() {
       const res = await axios.get(
         `http://openapi.foodsafetykorea.go.kr/api/${
           import.meta.env.VITE_API_KEY
-        }/COOKRCP01/json/1/100`,
-        // `http://api.kcisa.kr/openapi/API_CIA_086/request?serviceKey=02ac5562-a5e1-44e9-9a36-0380a6651d9e`,
+        }/COOKRCP01/json/1/1000/RCP_PARTS_DTLS=소고기`,
         {
           headers: {
             "content-type": "application/json",
