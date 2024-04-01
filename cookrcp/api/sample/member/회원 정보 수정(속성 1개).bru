@@ -1,0 +1,18 @@
+meta {
+  name: 회원 정보 수정(속성 1개)
+  type: http
+  seq: 4
+}
+
+patch {
+  url: {{url}}/users/26
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "address": "제주도에 살고싶어요",
+    "phone": "01012345678"
+  }
+}
